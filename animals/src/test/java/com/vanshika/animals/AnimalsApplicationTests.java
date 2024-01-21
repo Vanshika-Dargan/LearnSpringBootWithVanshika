@@ -1,10 +1,10 @@
-package com.vanshika.gettingstarted;
+package com.vanshika.animals;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GettingStartedApplicationTests {
+class AnimalsApplicationTests {
 
 	@Test
 	void contextLoads() {
