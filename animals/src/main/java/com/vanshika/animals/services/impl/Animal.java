@@ -11,10 +11,11 @@ public class Animal implements AnimalInterface {
     private CatInterface cat;
     private HorseInterface horse;
 
-    public Animal(){
-        this.dog=new Dog();
-        this.cat=new Cat();
-        this.horse=new Horse();
+    public Animal(DogInterface dog,CatInterface cat,HorseInterface horse){
+
+    this.dog=dog;
+    this.cat=cat;
+    this.horse=horse;
     }
     @Override
     public String print() {

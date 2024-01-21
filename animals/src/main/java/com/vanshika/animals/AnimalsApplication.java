@@ -11,6 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AnimalsApplication implements CommandLineRunner {
 
+	private AnimalInterface animal;
+
+	public AnimalsApplication(AnimalInterface animal){
+		this.animal=animal;
+	}
 	public static void main(String[] args) {
 
 		SpringApplication.run(AnimalsApplication.class, args);
@@ -18,7 +23,7 @@ public class AnimalsApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		AnimalInterface animal=new Animal();
+
 		log.info(animal.print());
 
 	}

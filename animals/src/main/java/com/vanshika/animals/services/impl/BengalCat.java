@@ -2,9 +2,9 @@ package com.vanshika.animals.services.impl;
 
 import com.vanshika.animals.services.CatInterface;
 
-public class Cat implements CatInterface {
+public class BengalCat implements CatInterface {
     @Override
     public String print() {
-        return "Persian";
+        return "Bengal";
     }
 }
