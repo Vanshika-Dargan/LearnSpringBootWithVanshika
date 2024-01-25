@@ -8,10 +8,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ConfigurationProperties(prefix="wrap")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ConfigurationProperties(prefix="wrap")
+
 public class WrapConfig {
     String bread;
     String cheese;

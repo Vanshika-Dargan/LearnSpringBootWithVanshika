@@ -11,6 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WrapApplication implements CommandLineRunner {
 
 	private WrapConfig wrapConfig;
+
+	public WrapApplication(WrapConfig wrapConfig){
+		this.wrapConfig=wrapConfig;
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(WrapApplication.class, args);
 	}
