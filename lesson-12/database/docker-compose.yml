@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: lesson8
+    image: postgres:latest
+    ports:
+      - '5433:5432'
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
