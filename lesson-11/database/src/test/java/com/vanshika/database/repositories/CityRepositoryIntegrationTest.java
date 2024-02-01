@@ -1,4 +1,4 @@
-package com.vanshika.database.dao.impl;
+package com.vanshika.database.repositories;
 
 import com.vanshika.database.TestDataUtil;
 import com.vanshika.database.dao.CountryDao;
@@ -63,6 +63,36 @@ public class CityDaoImplIntegrationTest {
         assertThat(result)
                 .hasSize(3)
                 .containsExactly(cityA,cityB,cityC);
+    }
+
+    @Test
+    public void testThatCityCanBeUpdated(){
+        Country country=TestDataUtil.createTestCountryA();
+        countryDao.create(country);
+        City city=TestDataUtil.createTestCityA();
+        city.setCountry_id(country.getId());
+        cityDaoImpl.create(city);
+        city.setName("Ghaziabad");
+        cityDaoImpl.update(city.getId(),city);
+        Optional<City> updatedCity=cityDaoImpl.findOne(city.getId());
+        assertThat(updatedCity).isPresent();
+        assertThat(updatedCity.get()).isEqualTo(city);
+
+    }
+
+    @Test
+    public void testThatCityCanBeDeleted(){
+        Country country=TestDataUtil.createTestCountryA();
+        countryDao.create(country);
+
+        City city=TestDataUtil.createTestCityA();
+        city.setCountry_id(country.getId());
+        cityDaoImpl.create(city);
+
+        cityDaoImpl.delete(city.getId());
+        Optional<City> result=cityDaoImpl.findOne(1L);
+
+        assertThat(result).isEmpty();
     }
 
 }
